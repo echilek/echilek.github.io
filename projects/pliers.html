@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Needle-Nose Pliers — CAD &amp; Structural Simulation | Evan Chilek</title>
+  <meta name="description" content="Needle-nose pliers coursework: SolidWorks modeling and assembly, a 40 psi static study, and natural-frequency and mode-shape analysis.">
+  <meta property="og:title" content="Needle-Nose Pliers — CAD &amp; Structural Simulation | Evan Chilek">
+  <meta property="og:description" content="Needle-nose pliers coursework: SolidWorks modeling and assembly, a 40 psi static study, and natural-frequency and mode-shape analysis.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- NAVIGATION: ordinary HTML, repeated on each page. Update every page when changing shared links. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="../index.html">Evan Chilek</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <header class="page-heading">
+      <a href="../work.html">All work</a>
+      <p class="eyebrow">04 / CAD &amp; Simulation</p>
+      <h1>Needle-Nose Pliers — CAD &amp; Structural Simulation</h1>
+      <p class="intro">Computational Tools coursework focused on recreating a needle-nose pliers assembly from a provided engineering drawing and evaluating its structural and dynamic behavior using SolidWorks simulations.</p>
+      <dl class="metadata">
+        <div><dt>My role</dt><dd>CAD modeling, assembly, simulation setup, and interpretation</dd></div>
+        <div><dt>Course</dt><dd>Computational Tools · Fall 2026</dd></div>
+        <div><dt>Tools</dt><dd>SolidWorks · Static FEA · Frequency / modal study</dd></div>
+      </dl>
+    </header>
+    <figure>
+      <a href="../assets/images/pliers/static-stress.png"><img src="../assets/images/pliers/static-stress.png" alt="Needle-nose pliers von Mises stress contour with handle-load arrows, pivot-region stress concentration, and a legend reaching 48,100 psi." width="1570" height="1028" decoding="async"></a>
+      <figcaption>Static simulation with 40 psi handle pressure. The original contour, load arrows, and stress/yield legend are shown.</figcaption>
+    </figure>
+    <!-- PROJECT CONTENT: keep captions and numerical claims tied to the supplied coursework. -->
+    <div class="project-body">
+      <section class="content-section"><h2>CAD Modeling &amp; Assembly</h2>
+        <p>Using a provided engineering drawing, I modeled both plier jaws, the pin, and the fork in SolidWorks, then assembled the components using mates. This work focused on accurately reproducing an existing design and preparing the assembly for static and frequency simulations.</p>
+        <figure>
+      <a href="../assets/images/pliers/plier-assembly.png"><img src="../assets/images/pliers/plier-assembly.png" alt="Gray SolidWorks assembly of two needle-nose plier jaws joined by a pin, with the fork between the tips." width="1254" height="930" loading="lazy" decoding="async"></a>
+      <figcaption>Completed SolidWorks assembly consisting of two jaws, a pin, and a fork.</figcaption>
+    </figure>
+      </section>
+      <section class="content-section"><h2>Static Structural Simulation</h2>
+        <p>I applied a 40 psi pressure load to portions of the handles to examine the stress distribution throughout the assembly. The simulation showed the highest von Mises stresses near the pivot, reaching approximately 48.1 ksi compared with a listed material yield strength of 90.0 ksi. These results apply to the modeled loading condition rather than a physical strength test.</p>
+      </section>
+      <section class="content-section"><h2>Frequency &amp; Mode Shape Analysis</h2>
+        <p>I performed a frequency study to identify the assembly’s natural frequencies and corresponding mode shapes. The study identified 16 modes, with the first occurring near zero frequency and the highest at approximately 8.83 kHz.</p>
+        <p>The first mode represented rigid-body rotation about the pin, while mode 5 showed torsional deformation. Other modes illustrated how the jaws and handles could deform or move relative to one another, even when overall translational mass participation remained low.</p>
+        <figure>
+      <a href="../assets/images/pliers/frequency-table.png"><img src="../assets/images/pliers/frequency-table.png" alt="Needle-nose frequency table listing 16 modes, from 0.0019649 Hz for mode 1 to 8,833.9 Hz for mode 16." width="794" height="698" loading="lazy" decoding="async"></a>
+      <figcaption>Natural frequencies calculated for the 16 identified modes.</figcaption>
+    </figure>
+        <figure>
+      <a href="../assets/images/pliers/mode-10.png"><img src="../assets/images/pliers/mode-10.png" alt="Needle-nose pliers mode 10 contour at 4,517.5 Hz, showing jaw and handle motion relative to the magenta reference outline." width="1968" height="1076" loading="lazy" decoding="async"></a>
+      <figcaption>The supplied needle-nose mode-shape image shows mode 10 at 4,517.5 Hz. Its amplitude display illustrates the mode shape, not a measured operating displacement.</figcaption>
+    </figure>
+      </section>
+    </div>
+    <nav class="project-next" aria-label="Project navigation"><a href="greenman-pedersen.html">Previous: Greenman-Pedersen</a><a href="../work.html">All work</a><a href="desk.html">Next: Custom Pine Desk</a></nav>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Evan Chilek <span class="tags"> / Mechanical engineering</span></p>
+      <!-- CONTACT LINKS: keep these public profile URLs in sync across pages. -->
+      <div class="footer-links"><a href="../index.html#contact">Contact</a><a href="https://www.linkedin.com/in/evan-chilek-202788325/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/echilek" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../assets/resume/Evan_Chilek_Resume.pdf">Résumé</a></div>
+    </div>
+  </footer>
+</body>
+</html>

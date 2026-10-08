@@ -1,0 +1,184 @@
+/* COLORS: change these values to update the entire site. */
+:root {
+  --paper: #f7f7f2;
+  --surface: #edeee8;
+  --ink: #252b27;
+  --muted: #59615a;
+  --green: #284d3b;
+  --rule: #c7cdc4;
+  --dark-secondary: #d3ded4;
+  --dark-rule: rgba(247, 247, 242, .3);
+}
+* { box-sizing: border-box; }
+/* TYPOGRAPHY: system fonts need no downloads or third-party services. */
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Aptos, 'Segoe UI', Arial, sans-serif; font-size: 1rem; line-height: 1.65; }
+/* Underline changes are quick and do not move the surrounding text. */
+a { color: var(--green); text-underline-offset: .22em; text-decoration-thickness: 1px; transition: text-underline-offset 140ms ease, color 140ms ease; }
+a:hover { text-decoration-thickness: 2px; text-underline-offset: .3em; }
+a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { font-weight: 600; line-height: 1.2; }
+h1 { font-size: clamp(2.2rem, 4.6vw, 4rem); letter-spacing: -.035em; max-width: 22ch; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); letter-spacing: -.025em; }
+h3 { font-size: 1.25rem; }
+p + p { margin-top: 1rem; }
+img, video { display: block; width: 100%; height: auto; }
+/* Preserve portrait process photos and videos without cropping or stretching them. */
+.portrait-media { width: 100%; max-width: 440px; margin-inline: auto; }
+figcaption { color: var(--muted); font-size: .875rem; line-height: 1.5; margin-top: .85rem; max-width: 80ch; }
+.container { width: min(1160px, calc(100% - 80px)); margin-inline: auto; }
+.skip-link { position: fixed; top: -100px; left: 1rem; z-index: 20; padding: .75rem; background: var(--paper); }
+.skip-link:focus { top: 1rem; }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 80px; }
+.wordmark { font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -.02em; font-size: 1.2rem; }
+.site-nav { display: flex; flex-wrap: wrap; gap: .7rem 2rem; }
+.site-nav a { color: var(--ink); text-decoration: underline; text-decoration-color: transparent; padding-block: .5rem; }
+.site-nav a:hover, .site-nav a[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--green); }
+.hero { padding-block: 4rem 4.25rem; }
+.hero .eyebrow { margin-bottom: 1.5rem; letter-spacing: .08em; }
+.hero h1 { max-width: 27ch; font-size: clamp(2.2rem, 4.3vw, 3.5rem); line-height: 1.12; letter-spacing: -.03em; }
+.hero .intro { margin-top: 1.75rem; }
+.eyebrow, .project-number, .metadata dt { font-family: Consolas, 'Courier New', monospace; font-size: .875rem; line-height: 1.5; letter-spacing: .045em; text-transform: uppercase; color: var(--green); }
+.eyebrow { margin-bottom: 1.25rem; }
+.intro { max-width: 65ch; color: var(--muted); margin-top: 1.25rem; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-top: 1px solid var(--ink); }
+.section-heading h2 { font-size: 1.125rem; font-weight: 600; letter-spacing: .01em; }
+.section-heading > a { font-size: .9375rem; }
+/* Project rhythm: a short opening after the divider, then generous space between entries. */
+.project { padding-block: 4rem 4.25rem; border-bottom: 1px solid var(--rule); }
+.selected-work > .project:first-of-type { padding-top: 1.75rem; }
+.project-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem; }
+.project h2 { margin-block: .75rem 1rem; font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
+.project h2 a { color: var(--ink); text-decoration: underline; text-decoration-color: transparent; }
+.project h2 a:hover, .project h2 a:focus-visible { color: var(--green); text-decoration-color: currentColor; text-decoration-thickness: 1px; }
+.project .intro { max-width: 54ch; margin-top: 1.125rem; }
+.project-summary p { max-width: 56ch; }
+.project-link { display: inline-block; margin-top: 1.5rem; font-weight: 600; }
+.split-project { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
+.split-project.reverse { grid-template-columns: 1.3fr 1fr; }
+.split-project.reverse figure { order: -1; }
+/* Homepage-only variations: text evidence and a compact, uncropped-at-display desk photo. */
+.text-project { align-items: start; }
+.home-desk-media { width: 100%; max-width: 440px; margin-inline: auto; }
+/* IMAGE REPLACEMENT: replace each .image-placeholder div with an img.
+   Keep its enclosing figure and write a factual figcaption. See README. */
+.image-placeholder { min-height: 310px; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; padding: 2rem; text-align: center; color: var(--muted); }
+.image-placeholder p { max-width: 42ch; }
+.image-placeholder span { font-family: Consolas, 'Courier New', monospace; font-size: .875rem; }
+.image-placeholder.wide { min-height: clamp(280px, 32vw, 400px); }
+.split-project.reverse .image-placeholder { min-height: 340px; }
+.image-placeholder.portrait { min-height: 430px; }
+.placeholder { color: var(--muted); }
+.tags { color: var(--muted); font-size: .875rem; line-height: 1.55; }
+.band { background: var(--surface); margin-top: 3rem; padding-block: 3rem; }
+.experience-row { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; border-top: 1px solid var(--rule); padding-block: 1.5rem; }
+.experience-row:first-of-type { margin-top: 1.5rem; }
+/* Homepage history: reuse the existing date/content rows and mobile stacking. */
+.experience-section { padding-block: 3rem 1rem; }
+.experience-section .experience-row { padding-block: 2rem; }
+.experience-section .experience-row:last-child { border-bottom: 1px solid var(--rule); }
+.experience-section h3 { margin-bottom: .75rem; }
+/* FULL-WIDTH BANDS: place the .container inside to align text with the projects. */
+.dark-band { background: var(--green); color: var(--paper); padding-block: 3rem; }
+.profile-band { padding-block: 3.75rem; }
+.dark-band a, .dark-band .project-number { color: var(--paper); }
+.dark-band a:focus-visible { outline-color: var(--paper); }
+.profile-secondary { color: var(--dark-secondary); }
+.profile-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 2.25rem; }
+.profile-heading h2 { font-size: 1.7rem; }
+.profile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.profile-grid > section { border-top: 1px solid var(--dark-rule); padding-top: 1.5rem; }
+.profile-band h3 { font-family: Consolas, 'Courier New', monospace; font-size: .875rem; font-weight: 400; line-height: 1.5; text-transform: uppercase; letter-spacing: .06em; color: var(--dark-secondary); margin-bottom: 1.25rem; }
+.profile-grid p + p { margin-top: .875rem; }
+.profile-lead { font-size: 1.3rem; font-weight: 600; }
+.profile-links { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; margin-top: 2rem; font-size: .9375rem; }
+.selected-work { padding-top: 4rem; }
+/* Full-width Contact color; the inner container retains existing spacing and columns. */
+.dark-band.contact-band { padding: 0; }
+.contact-band .tags { color: var(--dark-secondary); }
+.contact-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; padding-block: 3rem 2.5rem; }
+.contact-section h2 { font-size: 1.75rem; }
+.contact-section .intro { margin-top: .875rem; max-width: 38ch; }
+/* Offset homepage anchor destinations below the sticky desktop header. */
+#about, #work, #experience, #contact, #linkedin { scroll-margin-top: 7rem; }
+.site-footer { margin-top: .75rem; padding-block: 1.5rem; border-top: 1px solid var(--rule); font-size: .875rem; color: var(--muted); }
+.site-footer a { color: var(--muted); }
+.footer-inner { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; }
+.footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.page-heading { padding-block: 3rem 2.5rem; }
+.page-heading .eyebrow { margin-top: 1rem; }
+.metadata { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; border-top: 1px solid var(--rule); padding-top: 1.5rem; margin-block: 2rem; }
+.metadata-four { grid-template-columns: repeat(4, 1fr); }
+.metadata dd { margin: .5rem 0 0; }
+.project-body { max-width: 850px; margin: 3rem auto; }
+.content-section { padding-block: 2rem; border-top: 1px solid var(--rule); scroll-margin-top: 7rem; }
+.content-section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+.content-section h3 { margin-block: 1.5rem .65rem; }
+.project > div + figure { margin-top: 1.5rem; }
+.content-section figure { margin-block: 1.5rem; }
+.image-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+/* Drone testing sequence: natural media proportions, paired on desktop. */
+.testing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: start; margin-top: 1.5rem; }
+.testing-grid figure { margin: 0; max-width: none; }
+.testing-grid img, .testing-grid video { width: 100%; height: auto; }
+.project-next { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--rule); padding-block: 2rem; }
+.project-index { list-style: none; padding: 0; margin: 0; }
+.project-index li { display: grid; grid-template-columns: 3rem 1.5fr 1fr; gap: 1.5rem; padding-block: 2rem; border-top: 1px solid var(--rule); }
+.project-index h2 { font-size: 1.65rem; margin-bottom: .6rem; }
+.prose { max-width: 750px; }
+/* TABLET: retain the approved columns, with gaps proportional to the available space. */
+@media (min-width: 721px) and (max-width: 1000px) {
+  .metadata-four { grid-template-columns: repeat(2, 1fr); }
+  .profile-grid { gap: 1.5rem; }
+  .split-project { gap: 2.5rem; }
+}
+/* MOBILE: keep all navigation and technical content visible. */
+@media (max-width: 720px) {
+  .container { width: calc(100% - 36px); }
+  .header-inner { flex-direction: column; align-items: flex-start; gap: .5rem; padding-block: .875rem; }
+  .site-header { position: static; }
+  .site-nav { gap: .35rem 1.25rem; }
+  .hero { padding-block: 2.75rem 3rem; }
+  .hero h1 { font-size: clamp(2rem, 6vw, 2.65rem); line-height: 1.15; }
+  .hero .eyebrow { margin-bottom: 1.25rem; }
+  .hero .intro { margin-top: 1.5rem; }
+  .project-summary, .split-project, .split-project.reverse, .experience-row,
+  .profile-grid, .contact-section { grid-template-columns: 1fr; gap: 1.5rem; }
+  .dark-band { padding-block: 2.5rem; }
+  .profile-band { padding-block: 2.75rem; }
+  .profile-grid { gap: 2rem; }
+  .profile-grid > section { padding-top: 1.25rem; }
+  .profile-links { margin-top: 1.5rem; }
+  .selected-work { padding-top: 2.75rem; }
+  .project { padding-block: 2.75rem 3rem; }
+  .project-summary { margin-top: 1.5rem; }
+  .project h2 { font-size: 1.8rem; }
+  .contact-section { padding-block: 2.5rem 1.75rem; }
+  #about, #work, #experience, #contact, #linkedin { scroll-margin-top: 1rem; }
+  .split-project.reverse figure { order: initial; }
+  .split-project figure { margin-top: .5rem; }
+  .home-desk-media { max-width: 320px; }
+  .image-placeholder, .image-placeholder.wide, .split-project.reverse .image-placeholder { min-height: 230px; padding: 1.5rem; }
+  .metadata { grid-template-columns: 1fr; gap: 1rem; }
+  .metadata-four { grid-template-columns: 1fr; }
+  .image-pair { grid-template-columns: 1fr; }
+  .testing-grid { grid-template-columns: 1fr; }
+  .project-index li { grid-template-columns: 2rem 1fr; gap: 1rem; }
+  .project-index li > p { grid-column: 2; }
+  .section-heading { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  a { transition: none; }
+}
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .site-header, .site-footer, .skip-link, .project-next { display: none; }
+  .container { width: 100%; }
+  .hero, .page-heading, .content-section { padding-block: 1rem; }
+  figure, .metadata { break-inside: avoid; }
+  a { color: inherit; }
+  .dark-band { background: white; color: black; }
+  .dark-band a, .dark-band .project-number, .profile-band h3,
+  .profile-secondary, .contact-band .tags { color: black; }
+}
